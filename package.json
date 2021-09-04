@@ -1,5 +1,6 @@
 {
   "name": "curd_oper",
+  "homepage": "https://swati99921.github.io/Curd_Application",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +10,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "concurrently": "^6.2.1",
+    "gh-pages": "^3.2.3",
     "json-server": "^0.16.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -17,9 +19,10 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "json-server": "json-server --watch src/Database/Db.json --host 127.0.0.1 --port 3003",
-   
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
