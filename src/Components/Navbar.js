@@ -24,9 +24,9 @@ const Navbar = () =>{
             <AppBar className={classes.header} position="static">
 
                 <Toolbar>
-                    <NavLink className={classes.tabs} to="/" exact>codefor</NavLink>
-                    <NavLink className={classes.tabs} to="all"  exact>Alluser</NavLink>
-                    <NavLink className={classes.tabs}  to="add" exact>Adduser</NavLink>
+                    <NavLink className={classes.tabs} to="/" exact>Warehouse</NavLink>
+                    <NavLink className={classes.tabs} to="all"  exact>Show All Data</NavLink>
+                    <NavLink className={classes.tabs}  to="add" exact>Add Data</NavLink>
                 </Toolbar>
             </AppBar>
         </>

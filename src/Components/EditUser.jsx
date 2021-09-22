@@ -15,13 +15,13 @@ const useStyle = makeStyles({
 
 const intialValue = {
     name:"",
-    username:"",
-    email:"",
-    phone:"",
+    space_available:"",
+    cluster:"",
+    city:"",
 }
 const EditUser = ()=>{
     const [user, setUsers]=useState(intialValue);
-    const {name,username,email,phone} = user;
+    const {name,space_available,cluster,city} = user;
     const {id} = useParams();
     const classes = useStyle();
     const history = useHistory();
@@ -51,22 +51,22 @@ const EditUser = ()=>{
         
         
         <FormGroup className={classes.container}>
-            <Typography variant='h4'>Edit User</Typography>
+            <Typography variant='h4'>Edit Details</Typography>
             <FormControl>
                 <InputLabel>Name</InputLabel>
                 <Input onChange={(e)=>onValueChange(e)} name ='name' value={name}/>
             </FormControl>
             <FormControl>
-                <InputLabel>Username</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name ='username' value={username}/>
+                <InputLabel>space_available</InputLabel>
+                <Input onChange={(e)=>onValueChange(e)} name ='space_available' value={space_available}/>
             </FormControl>
             <FormControl>
-                <InputLabel>Email</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name='email' value={email}/>
+                <InputLabel>Cluster</InputLabel>
+                <Input onChange={(e)=>onValueChange(e)} name='cluster' value={cluster}/>
             </FormControl>
             <FormControl>
-                <InputLabel>Phone</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name ='phone' value={phone}/>
+                <InputLabel>City</InputLabel>
+                <Input onChange={(e)=>onValueChange(e)} name ='city' value={city}/>
             </FormControl>
             <Button variant='contained' onClick={()=>editUserDetail()} color='primary'>Edit User</Button>
         </FormGroup>

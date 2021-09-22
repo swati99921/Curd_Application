@@ -2,6 +2,7 @@ import { FormControl, InputLabel,FormGroup,Input,Button,makeStyles, Typography }
 
 import { useState } from "react";
 import { addUser } from "../Sevice/api";
+import { useHistory } from "react-router";
 const useStyle = makeStyles({
     container:{
             width:'50%',
@@ -13,15 +14,18 @@ const useStyle = makeStyles({
 })
 
 const intialValue = {
-    name:"",
-    username:"",
-    email:"",
-    phone:"",
+    "name" : "",
+    "id" : "",
+    "city": "",
+    "space_available": "",
+    "cluster" : ""
+    
 }
 const Adduser = ()=>{
     const [user, setUsers]=useState(intialValue);
-    const {name,username,email,phone} = user;
+    const {name,space_available,cluster,city} = user;
     const classes = useStyle();
+    const history = useHistory();
 
     const onValueChange =(e)=>{
         console.log(e.target.value)
@@ -31,27 +35,28 @@ const Adduser = ()=>{
 
     const addUserDetail = async() =>{
          await addUser(user);
+         history.push('./all');
     }
     return(
         
         
         <FormGroup className={classes.container}>
-            <Typography variant='h4'>Add User</Typography>
+            <Typography variant='h4'>Add Data</Typography>
             <FormControl>
                 <InputLabel>Name</InputLabel>
                 <Input onChange={(e)=>onValueChange(e)} name ='name' value={name}/>
             </FormControl>
             <FormControl>
-                <InputLabel>Username</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name ='username' value={username}/>
+                <InputLabel>Space_availabel</InputLabel>
+                <Input onChange={(e)=>onValueChange(e)} name ='space_available' value={space_available}/>
             </FormControl>
             <FormControl>
-                <InputLabel>Email</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name='email' value={email}/>
+                <InputLabel>Cluster</InputLabel>
+                <Input onChange={(e)=>onValueChange(e)} name='cluster' value={cluster}/>
             </FormControl>
             <FormControl>
-                <InputLabel>Phone</InputLabel>
-                <Input onChange={(e)=>onValueChange(e)} name ='phone' value={phone}/>
+                <InputLabel>city</InputLabel>
+                <Input onChange={(e)=>onValueChange(e)} name ='city' value={city}/>
             </FormControl>
             <Button variant='contained' onClick={()=>addUserDetail()} color='primary'>Add User</Button>
         </FormGroup>

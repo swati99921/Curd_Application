@@ -55,9 +55,9 @@ const Alluser = () =>{
                <TableRow className={classes.thead}>
                    <TableCell>Id</TableCell>
                    <TableCell>Name</TableCell>
-                   <TableCell>Username</TableCell>
-                   <TableCell>Email</TableCell>
-                   <TableCell>Phone</TableCell>
+                   <TableCell>Space_Availabel</TableCell>
+                   <TableCell>Cluster</TableCell>
+                   <TableCell>City</TableCell>
                    <TableCell></TableCell>
                    
                </TableRow>
@@ -68,12 +68,12 @@ const Alluser = () =>{
                   <TableRow className={classes.row}>
                       <TableCell>{user.id}</TableCell>
                       <TableCell>{user.name}</TableCell>
-                      <TableCell>{user.username}</TableCell>
-                      <TableCell>{user.email}</TableCell>
-                      <TableCell>{user.phone}</TableCell>
+                      <TableCell>{user.space_available}</TableCell>
+                      <TableCell>{user.cluster}</TableCell>
+                      <TableCell>{user.city}</TableCell>
                       <TableCell>
                           <Button variant='contained' color='primary' style={{marginRight:'10px'}} component={Link} to={`/edit/${user.id}`}>Edit</Button>
-                          <Button variant='contained' color='secondary' onClick={()=>deleteUserData(user.id)}>Delete</Button>
+                          {/* <Button variant='contained' color='secondary' onClick={()=>deleteUserData(user.id)}>Delete</Button> */}
                       </TableCell>
                     
                   </TableRow>
